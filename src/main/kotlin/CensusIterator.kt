@@ -1,4 +1,4 @@
-class CensusIterator(private val nodes: ArrayList<Node<IFlyweight>>): IIterator {
+class CensusIterator(nodes: ArrayList<Node<IFlyweight>>): IIterator {
     private var it= nodes.listIterator()
     override fun hasNext(): Boolean {
         return it.hasNext()
