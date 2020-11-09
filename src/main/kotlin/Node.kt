@@ -1,7 +1,7 @@
 class Node<E>(content: E) {
     private val children: ArrayList<Node<E>> = ArrayList()
     val nodeContent: E = content
-    private var parent: Node<E>? = null
+    var parent: Node<E>? = null
     fun getChildren(): ArrayList<Node<E>> {
         return children
     }

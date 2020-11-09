@@ -1,13 +1,18 @@
 class CensusIterator(private val nodes: ArrayList<Node<IFlyweight>>): IIterator {
-    private var index: Int = 0
+    private var it= nodes.listIterator()
     override fun hasNext(): Boolean {
-        return index<nodes.size-1
+        return it.hasNext()
     }
 
     override fun next(): Node<IFlyweight>? {
-        return if(this.hasNext())
-            nodes[index++]
-        else
-            null
+        return if (hasNext())
+            it.next()
+        else null
+    }
+
+    override fun lower(): IIterator{
+        val iter = CensusIterator(it.next().getChildren())
+        it.previous()
+        return iter
     }
 }
